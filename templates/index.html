@@ -19,11 +19,10 @@
         background-color:#a1251b;
         border-radius:200px;
       }
-
     </style>
   </head>
   <body>
-    <div class="container">
+    <div style="background-color:#000000" class="container-fluid">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
         <h1 style="color:#a1251b">Mission to Mars</h1>
@@ -31,12 +30,12 @@
         <p><a class="button" href="/scrape" role="button">Click me to Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
-      <div class="row" id="mars-news">
+      <div class="row" id="mars-news" style="color:#a1251b">
         <div class="col-xs-12 col-md-12">
           <div class="media">
-            <div class="media-body">
+            <div class="media-body text-center">
               <h2 style="color:#a1251b">Latest Mars News</h2>
-              <h4 class="media-heading" style="color:#a1251b">{{ mars.news_title }}</h4>
+              <h4 class="media-heading text-uppercase" style="color:#a1251b">{{ mars.news_title }}</h4>
               <p>{{ mars.news_paragraph }}</p>
             </div>
           </div>
@@ -54,10 +53,9 @@
         </div>
         <div class="col-xs-12 col-md-6 text-center">
           <!-- Mars Facts -->
-          <div class="row" id="mars-facts">
-            <h2 style="color:#a1251b">Mars Facts</h2>
+          <div class="row" id="mars-facts" style="color:#a1251b">
+            <h2 class="text-center" style="color:#a1251b">Mars Facts</h2>
             {{ mars.facts | safe }}
-            </table>
           </div>
         </div>
         <div class="row" id="mars-hemisphere">
@@ -79,5 +77,14 @@
         </div>
       </div>
     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type='text/javascript'>
+      window.onload = function() {
+        const thead = document.querySelectorAll('.table > thead');
+        thead.forEach(e => e.classList.add('thead-dark'));
+      }
+    </script>
   </body>
 </html>
